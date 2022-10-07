@@ -1,0 +1,47 @@
+@import '../../../styles/colors.scss';
+@import '../../../styles/variables.scss';
+@import '../../../styles/mixins.scss';
+@import '../../../styles/functions.scss';
+
+.information {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(100px, auto);
+  margin-top: 20px;
+
+  .titleWrapper {
+    margin: 10px 0px 10px 8px;
+
+    .title {
+      @include font('Lato', 20, 24, 600);
+      color: colors('orange');
+    }
+
+    .subtitle {
+      @include font('Lato', 16, 20, 400);
+      color: colors('grey');
+    }
+  }
+
+  .infoWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+
+    .icons {
+      display: flex;
+      gap: 5px;
+    }
+
+    .price {
+      @include font('Lato', 28, 36, 1000);
+      color: colors('grey');
+    }
+
+    .button {
+      @include button;
+    }
+  }
+}

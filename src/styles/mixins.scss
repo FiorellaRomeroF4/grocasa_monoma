@@ -1,0 +1,28 @@
+@mixin font($family: 'Lato', $size: 14, $line: 18, $weight: 500) {
+  $baseFont: 20;
+  $fontSize: #{$size}px;
+  $lineHeight: #{$line}px;
+  $fontFamily: #{$family};
+
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  font-size: calculateRem($size, $baseFont) !important;
+  line-height: $lineHeight;
+  line-height: calculateRem($line, $baseFont) !important;
+  font-weight: $weight !important;
+}
+
+@mixin button {
+  display: flex;
+  width: 130px;
+  height: 35px;
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px solid colors('orange');
+  background-color: colors('withe');
+  color: colors('orange');
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+}
