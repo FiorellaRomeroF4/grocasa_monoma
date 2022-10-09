@@ -52,27 +52,30 @@ html {
       height: 100%;
     }
 
-    scrollbar-width: thin;
-
-    /* total width */
-
-    ::-webkit-scrollbar {
-      width: 4px;
+    .ant-switch {
+      height: 38px;
+      width: 80px;
+      border-radius: 50px;
+      .ant-switch-handle:before {
+        background-color: white;
+        height: 34px;
+        width: 34px;
+        border-radius: 50px;
+      }
     }
 
-    /* background of the scrollbar except button or resizer */
-    ::-webkit-scrollbar-track {
-      background-color: transparent;
-    }
-    ::-webkit-scrollbar-track:hover {
-      background-color: transparent;
-    }
-
-    /* scrollbar itself */
-    ::-webkit-scrollbar-thumb {
-      background-color: transparent;
-      border-radius: 8px;
-      border: 4px solid #374b42;
+    .ant-switch-checked {
+      background-color: #fc5506;
+      height: 38px;
+      width: 80px;
+      border-radius: 50px;
+      .ant-switch-handle:before {
+        background-color: white;
+        height: 34px;
+        width: 34px;
+        border-radius: 50px;
+        left: calc(100% - 35px);
+      }
     }
   }
 }
