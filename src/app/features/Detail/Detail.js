@@ -6,9 +6,11 @@ import { Map } from "../../components/Map/Map"
 import { Switch, Carousel } from "antd";
 import { getPropertyDetail, getRelatedProperties } from "../../store/property/property"
 import { PropertyList } from '../../components/PropertyList/PropertyList'
+import { useMediaQuery } from 'react-responsive'
 import styles from './Detail.module.scss'
 
 export const Detail = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const dispatch = useDispatch()
   const { property } = useSelector((state) => state)
   const { propertyDetail, relatedProperties } = property
@@ -42,6 +44,7 @@ export const Detail = () => {
   ]
 
   const images = ['/multimedia/images/image.png', '/multimedia/images/image.png', '/multimedia/images/image.png']
+  const imagesResponsive = ['/multimedia/images/image-responsive.png', '/multimedia/images/image-responsive.png', '/multimedia/images/image-responsive.png']
 
   const {
     title,
@@ -76,12 +79,18 @@ export const Detail = () => {
         <img src={'/multimedia/images/Grocasa.png'} alt="logo" width={'150px'}/>
       </div>
       <div className={styles.wrapperCarousel}>
-        <Carousel dots={true} slidesToShow={2}>
-          {images && images.map((ele) => (
-            <div>
-              <img src={ele} alt="property"/>
-            </div>
-          ))}
+        <Carousel dots={true} slidesToShow={isMobile ? 1.3 : 2}>
+          {isMobile ? (
+            imagesResponsive.map((ele) => (
+              <div>
+                <img src={ele} alt="property" width={'300px'}/>
+              </div>
+            ))) : (          
+            images.map((ele) => (
+              <div>
+                <img src={ele} alt="property"/>
+              </div>
+            )))}
         </Carousel>
       </div>
       <div className={styles.wrapperInfo}>
@@ -137,7 +146,7 @@ export const Detail = () => {
         </div>
         <div className={styles.wrapperContact}>
           <p className={styles.tellMe}>Avísame si baja</p>
-          <Switch checked/>
+          <Switch defaultChecked/>
           <button onClick={handleContact} className={styles.contactButton}>Contactar</button>
         </div>
       </div>

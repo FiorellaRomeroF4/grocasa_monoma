@@ -1,17 +1,19 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-
-const containerStyle = {
-  width: '723px',
-  height: '400px',
-};
-
-const center = {
-  lat: -3.745,
-  lng: -38.523
-};
+import { useMediaQuery } from 'react-responsive'
 
 export const Map = () => {
+  const isMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+  const containerStyle = {
+    width: isMobile ? '370px' : '723px',
+    height: '400px',
+  }
+  
+  const center = {
+    lat: -3.745,
+    lng: -38.523
+  }
+
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
     googleMapsApiKey: "AIzaSyDwW-G6wNo9ZxsSee0vI8CGma4HfcMRkac"

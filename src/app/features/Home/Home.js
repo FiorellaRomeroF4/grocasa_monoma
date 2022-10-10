@@ -25,7 +25,7 @@ export const Home = () => {
   
   return (
     <section className={styles.home}>
-      <div>
+      <div className={styles.wrapperLogo}>
         <img src={'/multimedia/images/Grocasa.png'} alt="logo" width={'150px'} />
       </div>
       <PropertyList propertyInfo={propertyInfo} />

@@ -1,3 +1,14 @@
 .home {
   margin: 20px 120px 20px 120px;
+
+  @media (max-width: '820px') {
+    margin: 20px 20px 20px 20px;
+  }
+
+  .wrapperLogo {
+    @media (max-width: '820px') {
+      display: flex;
+      justify-content: center;
+    }
+  }
 }

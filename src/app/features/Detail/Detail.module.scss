@@ -17,6 +17,10 @@
 .wrapperInfo {
   margin: 30px 420px 20px 120px;
 
+  @media (max-width: '820px') {
+    margin: 30px 20px 20px 20px;
+  }
+
   .title {
     @include font('Lato', 28, 34, 600);
     color: colors('orange');
@@ -61,8 +65,16 @@
     @include font('Lato', 14, 16, 600);
     color: colors('grey');
 
+    @media (max-width: '820px') {
+      gap: 3.5%;
+    }
+
     .toilet {
       margin-left: 2.5%;
+
+      @media (max-width: '820px') {
+        margin-left: 5%;
+      }
     }
   }
 
@@ -72,6 +84,12 @@
     grid-auto-rows: minmax(100px, auto);
     margin-top: 10px;
     width: 500px;
+
+    @media (max-width: '820px') {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
     .characteristics {
       display: flex;
@@ -100,6 +118,10 @@
     align-items: center;
     margin-right: 20px;
 
+    @media (max-width: '820px') {
+      margin: 0;
+    }
+
     .tellMe {
       @include font('Lato', 16, 20, 700);
       color: colors('orange');
@@ -114,6 +136,10 @@
 
 .relatedProperties {
   margin: 20px 120px 30px 120px;
+
+  @media (max-width: '820px') {
+    margin: 20px 20px 30px 20px;
+  }
 
   .titleFooter {
     @include font('Lato', 28, 36, 600);
