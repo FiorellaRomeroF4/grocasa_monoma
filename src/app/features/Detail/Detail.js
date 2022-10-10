@@ -48,6 +48,7 @@ export const Detail = () => {
     beds,
     toilet,
     price,
+    alertPrice,
     characteristics,
     extras
   } = propertyInfo
@@ -62,6 +63,10 @@ export const Detail = () => {
     document.body.appendChild(a)
     a.target = '_blank'
     a.click()
+  }
+
+  const handleAlertPrice = (event) => {
+    setPropertyInfo({ ...propertyInfo, alertPrice: event })
   }
 
   return (
@@ -150,7 +155,7 @@ export const Detail = () => {
         </div>
         <div className={styles.wrapperContact}>
           <p className={styles.tellMe}>Avísame si baja</p>
-          <Switch defaultChecked/>
+          <Switch checked={alertPrice} onChange={handleAlertPrice} />
           <button onClick={handleContact} className={styles.contactButton}>Contactar</button>
         </div>
       </div>
