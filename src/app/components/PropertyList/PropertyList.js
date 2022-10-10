@@ -8,12 +8,6 @@ export const PropertyList = ({propertyInfo}) => {
 
   const navigate = useNavigate()
 
-  const icons = [
-    {src: '/multimedia/icons/arrows.svg', alt: 'area'},
-    {src: '/multimedia/icons/bed.svg', alt: 'bed'},
-    {src: '/multimedia/icons/toilet.svg', alt: 'toilet'},
-  ]
-
   const handleMoreInfo = (id) => {
     navigate(`/${id}`)
   }
@@ -28,10 +22,25 @@ export const PropertyList = ({propertyInfo}) => {
             <p className={styles.subtitle}>{ele.subtitle}</p>
           </div>
           <div className={styles.infoWrapper}>
-            <div className={styles.icons}>
-              {icons.map((ele) => (
-                <img src={ele.src} alt={ele.alt} width={isMobile ? '30px' : '40px'} />
-              ))}
+            <div className={styles.wrapperIcons}>
+              <div className={styles.icons}>
+                <img src={'/multimedia/icons/arrows.svg'} alt={'area'} width={isMobile ? '30px' : '40px'} />
+                <div>
+                  <p className={styles.quantity}>{ele.area}</p>
+                </div>
+              </div>
+              <div className={styles.icons}>
+                <img src={'/multimedia/icons/bed.svg'} alt={'beds'} width={isMobile ? '30px' : '40px'} />
+                <div>
+                  <p className={styles.quantity}>{ele.beds}</p>
+                </div>
+              </div>
+              <div className={styles.icons}>
+                <img src={'/multimedia/icons/toilet.svg'} alt={'toilet'} width={isMobile ? '30px' : '40px'} />
+                <div>
+                  <p className={styles.quantity}>{ele.toilet}</p>
+                </div>
+              </div>
             </div>
             <div>
               <p className={styles.price}>{`${ele.price}€`}</p>
@@ -41,11 +50,6 @@ export const PropertyList = ({propertyInfo}) => {
                 Más info
               </button>
             </div>
-          </div>
-          <div className={styles.quantity}>
-            <p>{ele.area}</p>
-            <p>{ele.beds}</p>
-            <p className={styles.toilet}>{ele.toilet}</p>
           </div>
         </div>
       ))}

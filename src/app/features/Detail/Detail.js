@@ -37,12 +37,6 @@ export const Detail = () => {
     }
   }, [relatedProperties])
 
-  const icons = [
-    {src: '/multimedia/icons/arrows.svg', alt: 'area'},
-    {src: '/multimedia/icons/bed.svg', alt: 'bed'},
-    {src: '/multimedia/icons/toilet.svg', alt: 'toilet'},
-  ]
-
   const images = ['/multimedia/images/image.png', '/multimedia/images/image.png', '/multimedia/images/image.png']
   const imagesResponsive = ['/multimedia/images/image-responsive.png', '/multimedia/images/image-responsive.png', '/multimedia/images/image-responsive.png']
 
@@ -79,7 +73,7 @@ export const Detail = () => {
         <img src={'/multimedia/images/Grocasa.png'} alt="logo" width={'150px'}/>
       </div>
       <div className={styles.wrapperCarousel}>
-        <Carousel dots={true} slidesToShow={isMobile ? 1.3 : 2.1}>
+        <Carousel dots={true} slidesToShow={isMobile ? 1.3 : 2.2} autoplay>
           {isMobile ? (
             imagesResponsive.map((ele) => (
               <div>
@@ -102,10 +96,25 @@ export const Detail = () => {
           <p className={styles.description}>{description}</p>
         </div>
         <div className={styles.wrapperItems}>
-          <div className={styles.icons}>
-            {icons.map((ele) => (
-              <img src={ele.src} alt={ele.alt} width={'40px'} />
-            ))}
+          <div className={styles.wrapperIcons}>
+            <div className={styles.icons}>
+              <img src={'/multimedia/icons/arrows.svg'} alt={'area'} width={isMobile ? '30px' : '40px'} />
+              <div>
+                <p className={styles.quantity}>{area}</p>
+              </div>
+            </div>
+            <div className={styles.icons}>
+              <img src={'/multimedia/icons/bed.svg'} alt={'beds'} width={isMobile ? '30px' : '40px'} />
+              <div>
+                <p className={styles.quantity}>{beds}</p>
+              </div>
+            </div>
+            <div className={styles.icons}>
+              <img src={'/multimedia/icons/toilet.svg'} alt={'toilet'} width={isMobile ? '30px' : '40px'} />
+              <div>
+                <p className={styles.quantity}>{toilet}</p>
+              </div>
+            </div>
           </div>
           <div className={styles.wrapperPrice}>
             <p className={styles.price}>{`${price}€`}</p>
@@ -117,11 +126,6 @@ export const Detail = () => {
               style={{ cursor: 'pointer' }}
             />
           </div>
-        </div>
-        <div className={styles.quantity}>
-          <p>{area}</p>
-          <p>{beds}</p>
-          <p className={styles.toilet}>{toilet}</p>
         </div>
         <div className={styles.wrapperExtras}>
           <div>
