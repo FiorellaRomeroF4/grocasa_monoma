@@ -22,7 +22,7 @@ export const PropertyList = ({propertyInfo}) => {
     <div className={styles.information}>
       {propertyInfo.map((ele, index) => (
         <div key={index}>
-          <img src={ele.img} alt="property" width={isMobile ? '370' : '495px'}/>
+          <img src={ele.img} alt="property" width={'99%'}/>
           <div className={styles.titleWrapper}>
             <p className={styles.title}>{ele.title}</p>
             <p className={styles.subtitle}>{ele.subtitle}</p>
