@@ -1,11 +1,9 @@
 import React from 'react'
 import { GoogleMap, useJsApiLoader } from '@react-google-maps/api';
-import { useMediaQuery } from 'react-responsive'
 
 export const Map = () => {
-  const isMobile = useMediaQuery({ query: '(max-width: 1224px)' })
   const containerStyle = {
-    width: isMobile ? '370px' : '723px',
+    width: '100%',
     height: '400px',
   }
   
