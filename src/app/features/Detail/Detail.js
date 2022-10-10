@@ -79,7 +79,7 @@ export const Detail = () => {
         <img src={'/multimedia/images/Grocasa.png'} alt="logo" width={'150px'}/>
       </div>
       <div className={styles.wrapperCarousel}>
-        <Carousel dots={true} slidesToShow={isMobile ? 1.3 : 2}>
+        <Carousel dots={true} slidesToShow={isMobile ? 1.3 : 2.1}>
           {isMobile ? (
             imagesResponsive.map((ele) => (
               <div>
